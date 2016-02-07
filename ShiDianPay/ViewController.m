@@ -24,7 +24,7 @@
 
 - (IBAction)btnClick:(id)sender {
     
-    [ShiDianPay payWithType:ShiDianPayTypeWechat money:0.01 orderID:@"ShiDianPay_007" title:@"支付宝_新年快乐" desc:@"时点支付：ShiDianPay_FrameWork" completeClosure:^(NSString *errorMsg) {
+    [ShiDianPay payWithType:ShiDianPayTypeWechat money:0.01 orderID:@"ShiDianPay_009" title:@"支付宝_新年快乐" desc:@"时点支付：ShiDianPay_FrameWork" completeClosure:^(NSString *errorMsg) {
         
         if(errorMsg == nil){
             

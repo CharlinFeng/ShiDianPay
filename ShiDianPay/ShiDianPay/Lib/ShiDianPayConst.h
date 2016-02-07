@@ -35,7 +35,11 @@
      <string>weixin</string>
     </array>
  
- 6.请补充填写以下配置信息
+ 6.填写Scheme
+   对于支付宝，填写自己的app的scheme，如：Yeah
+   对于微信支付，填写微信AppId
+ 
+ 7.请补充填写以下配置信息
  
  */
 
