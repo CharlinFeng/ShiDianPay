@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic,assign) BOOL isClickPayAPPBackBtn;
+
 @end
 
 @implementation ViewController
@@ -19,22 +21,47 @@
     
     [super viewDidLoad];
     
-    
+    [self check];
 }
 
 - (IBAction)btnClick:(id)sender {
     
-    [ShiDianPay payWithType:ShiDianPayTypeWechat money:0.01 orderID:@"ShiDianPay_009" title:@"支付宝_新年快乐" desc:@"时点支付：ShiDianPay_FrameWork" completeClosure:^(NSString *errorMsg) {
+    self.isClickPayAPPBackBtn = NO;
+    
+    [ShiDianPay payWithType:ShiDianPayTypeAliPay money:0.01 orderID:@"ShiDianPay_012" title:@"支付宝_新年快乐" desc:@"时点支付：ShiDianPay_FrameWork"      completeClosure:^(NSString *errorMsg) {
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"ShiDianPay"];
+
+        
+        self.isClickPayAPPBackBtn = YES;
         
         if(errorMsg == nil){
             
             NSLog(@"支付成功");
+            
         }else{
             
             NSLog(@"支付失败:%@",errorMsg);
         }
+        
     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(check) name:UIApplicationDidBecomeActiveNotification object:nil];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"baiduMap://"]];
+    
 }
 
+-(void)check{
+    
+    if(self.isClickPayAPPBackBtn){
+    
+        NSLog(@"你按规矩来了");
+        
+    }else{
+    
+
+    }
+}
 
 @end

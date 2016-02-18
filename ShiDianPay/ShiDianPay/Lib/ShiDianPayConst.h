@@ -17,7 +17,7 @@
  
  2.下载对应SDK，如果SDK没有 更新直接使用当前SDK
  
- 3.$(PROJECT_DIR)/ShiDianPay/ShiDianPay/Lib/Alipay
+ 3.$(PROJECT_DIR)/$(TARGET_NAME)/Frameworks/ShiDianPay/Lib/Alipay
  
  4.解决编译错误：
     .CoreMotion.framework
