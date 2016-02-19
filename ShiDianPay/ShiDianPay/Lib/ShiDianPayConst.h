@@ -60,7 +60,7 @@
 typedef enum{
     
     /** 支付宝 */
-    ShiDianPayTypeAliPay,
+    ShiDianPayTypeAliPay = 0,
     
     /** 微信支付 */
     ShiDianPayTypeWechat

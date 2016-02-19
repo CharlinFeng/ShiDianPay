@@ -13,6 +13,6 @@
 
 +(void)aliPayHandleOpenURL:(NSURL *)url;
 
-+(void)payUseAlipayWithMoney:(CGFloat)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure;
++(void)payUseAlipayWithMoney:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure;
 
 @end

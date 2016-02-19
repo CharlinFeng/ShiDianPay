@@ -37,7 +37,7 @@
 
 
 
-+(void)payUseAlipayWithMoney:(CGFloat)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure{
++(void)payUseAlipayWithMoney:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure{
     
     ShiDianPay *pay = [ShiDianPay sharedShiDianPay];
     pay.CompleteBlock = completeClosure;
@@ -77,7 +77,7 @@
     order.tradeNO = orderID; //订单ID（由商家自行制定）
     order.productName = title; //商品标题
     order.productDescription = desc; //商品描述
-    order.amount = [NSString stringWithFormat:@"%@",@(money)]; //商品价格
+    order.amount = money; //商品价格
     order.notifyURL =  ShiDianPay_Alipay_NotifyURL; //回调URL
     
     order.service = @"mobile.securitypay.pay";

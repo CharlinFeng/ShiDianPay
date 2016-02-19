@@ -23,7 +23,7 @@ HMSingletonH(ShiDianPay)
 +(void)handleOpenURL:(NSURL *)url;
 
 
-+(void)payWithType:(ShiDianPayType)type money:(CGFloat)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure;
++(void)payWithType:(ShiDianPayType)type money:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure;
 
 
 @end

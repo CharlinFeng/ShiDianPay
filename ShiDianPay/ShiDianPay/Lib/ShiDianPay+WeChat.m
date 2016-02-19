@@ -25,7 +25,7 @@
 
 
 
-+(void)payUseWeChatWithMoney:(CGFloat)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure{
++(void)payUseWeChatWithMoney:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure{
 
     ShiDianPay *pay = [ShiDianPay sharedShiDianPay];
     
@@ -58,7 +58,7 @@
     //商户系统内部的订单号,32个字符内、可包含字母
     params[@"out_trade_no"] = orderID;
     //订单总金额，单位为分
-    NSString *total_fee = [NSString stringWithFormat:@"%@",@((NSInteger)(money * 100))];
+    NSString *total_fee = [NSString stringWithFormat:@"%@",@((NSInteger)(money.floatValue * 100))];
     params[@"total_fee"] = total_fee;
     //获取本机IP地址，请再wifi环境下测试，否则获取的ip地址为error，正确格式应该是8.8.8.8
     NSString *spbill_create_ip = @"8.8.8.8";

@@ -13,6 +13,6 @@
 +(void)weChatHandleOpenURL:(NSURL *)url;
 
 
-+(void)payUseWeChatWithMoney:(CGFloat)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure;
++(void)payUseWeChatWithMoney:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure;
 
 @end
