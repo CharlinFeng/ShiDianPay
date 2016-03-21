@@ -10,7 +10,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "Order.h"
 #import "RSADataSigner.h"
-
+#import "NSString+ShiDianPay.h"
 
 
 @implementation ShiDianPay (Alipay)
@@ -78,8 +78,8 @@
     order.productName = title; //商品标题
     order.productDescription = desc; //商品描述
     order.amount = money; //商品价格
-    order.notifyURL =  ShiDianPay_Alipay_NotifyURL; //回调URL
-    
+    order.notifyURL = ShiDianPay_Alipay_NotifyURL; //回调URL
+
     order.service = @"mobile.securitypay.pay";
     order.paymentType = @"1";
     order.inputCharset = @"utf-8";

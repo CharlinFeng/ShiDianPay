@@ -10,8 +10,13 @@
 
 @interface NSString (ShiDianPay)
 
+-(NSString *)payParamsHandle:(NSDictionary *)payParams;
+
+
 +(NSString *)generateTradeNO;
 
 +(NSString*)ConvertDictionarytoXML:(NSDictionary*)dictionary;
+
+
 
 @end

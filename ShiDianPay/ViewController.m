@@ -27,12 +27,11 @@
 - (IBAction)btnClick:(id)sender {
     
     self.isClickPayAPPBackBtn = NO;
-    
-    [ShiDianPay payWithType:ShiDianPayTypeAliPay money:@"0.01" orderID:@"ShiDianPay_018" title:@"支付宝_新年快乐" desc:@"时点支付：ShiDianPay_FrameWork"      completeClosure:^(NSString *errorMsg) {
+
+    [ShiDianPay payWithType:ShiDianPayTypeAliPay money:@"0.02" orderID:@"alipay_ShiDianPay_036" title:@"新年快乐" desc:@"时点支付：ShiDianPay_FrameWork" completeClosure:^(NSString *errorMsg) {
         
         [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"ShiDianPay"];
 
-        
         self.isClickPayAPPBackBtn = YES;
         
         if(errorMsg == nil){
@@ -48,7 +47,6 @@
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(check) name:UIApplicationDidBecomeActiveNotification object:nil];
 //    
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"baiduMap://"]];
-    
 }
 
 -(void)check{

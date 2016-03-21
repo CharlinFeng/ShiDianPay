@@ -75,7 +75,7 @@
     
     // 转换成xml字符串
     NSString *xmlString = [NSString ConvertDictionarytoXML:params];
-
+    NSLog(@"xmlString: %@",xmlString);
     //加载一个NSURL对象
     NSMutableURLRequest *requestM = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     

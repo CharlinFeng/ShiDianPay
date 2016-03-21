@@ -10,8 +10,22 @@
 
 @implementation NSString (ShiDianPay)
 
+-(NSString *)payParamsHandle:(NSDictionary *)payParams{
+
+    NSMutableString *strM = [NSMutableString stringWithString:self];
+    
+    [payParams enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL * _Nonnull stop) {
+        
+        [strM appendFormat:@"/%@/%@",key,obj];
+    }];
+    
+    return strM.copy;
+}
+
+
 #pragma mark - 产生随机订单号
 +(NSString *)generateTradeNO{
+    
     static int kNumber = 15;
     
     NSString *sourceStr = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";

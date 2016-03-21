@@ -83,15 +83,10 @@ typedef enum{
 #define ShiDianPay_Alipay_PrivateKey @"MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAL4pAzAE8qM6uBUB4LT8jfIgpsS+k9uGVGvVvkaFGpTWi1kyrU3ljwIZsmAAK0Qivlsn9rg9D+IQnVCuUKzmysWsQp9FqlptfL3OLfCcwzlZvi+4+vKI/Ad8aGCR21cd9LfKDXv8fxZMfEjboTkFTLiPYsDDClK7OGYaGFtIoa8FAgMBAAECgYAoi+ooFQX/lAeoQww8yxUhKaElllVEm7HohFzcAImYbt6rmEinsWj606vbGG4hSx83pJ/QzQRT+aLxjxmYpGVbvc/dXj1Pv6a8c59B5gsXC32+yuZIBpvzMmMenCUhRpffJpHczqwiom7MUpRA5HkTVIC9xOIidvMVqCYLc2EDgQJBAP1NrobAtfi7lorKB9m4ACfQZz6q4fWIsPGjJsBKKkawyNDRCTf+WPvucpNlGlzmR/JaF8JX+FoEXNiUjoaBYJECQQDALz+zsEPkt0JCjYpa0rSWDM/B2ZemPz2C2bnG8kfGpYu1i2GS6ZPm0qs0n0aeQGlnNYndtS+swxopJ7IPBiE1AkEA4uqyTHlbC0ZRaGfwfHQ/f2tM8nD3F5Sqnu1/i4dlNAqu+5In5gdvA9HqxmwuH8cT8OIQosNX8pwx6Lu8qnZAYQJASfxmm7iKCqz6V0DCOMDRQMrh2JD6Lsg91/gV6x8uvqzQoi1sfPBrPftwaau/tgC6Ez+rOa0dE3dwxNNBW0NS2QJAfwN/OEdzH8/Wc4pwijMXZALj+qnkkCNM5rjrx7NDeZp9rKHS26Wd+Fp0z1G4KysSLliKrs8+ZXLniqx4dn0lgg=="
 
 /** notifyURL */
-#define ShiDianPay_Alipay_NotifyURL @"http://120.25.157.128/yeah/Home/Info"
+#define ShiDianPay_Alipay_NotifyURL @"http://112.74.125.78/yeah/index.php/Home/YeahPay/pay_callback"
 
 /** appScheme */
 #define ShiDianPay_Alipay_AppScheme @"Yeah"
-
-
-
-
-
 
 
 
