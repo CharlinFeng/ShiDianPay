@@ -112,8 +112,7 @@
             NSString *errorMsg_Temp = resCode != 9000 ? resStr : nil;
             if(completeClosure != nil){completeClosure(errorMsg_Temp);}
         }];
-    }
-    
+    }    
 }
 
 @end
