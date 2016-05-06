@@ -40,7 +40,7 @@
    对于微信支付，填写微信AppId
  
  7.请补充填写以下配置信息
- 
+  http://blog.sina.com.cn/s/blog_6451df3d0102vl67.html
  */
 
 
