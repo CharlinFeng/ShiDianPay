@@ -27,8 +27,13 @@
 - (IBAction)btnClick:(id)sender {
     
     self.isClickPayAPPBackBtn = NO;
+    
+    ShiDianPayAccountModel *m = [ShiDianPayAccountModel modelWithNotifyURL:ShiDianPay_WeChat_NotifyURL];
+    [m wechatFillWithAppID:ShiDianPay_WeChat_AppID mch_id:ShiDianPay_WeChat_Mch_id partnerKey:ShiDianPay_WeChat_API_PartnerKey];
 
-    [ShiDianPay payWithType:ShiDianPayTypeAliPay money:@"0.01" orderID:@"alipay_ShiDianPay_040" title:@"新年快乐" desc:@"时点支付：ShiDianPay_FrameWork" completeClosure:^(NSString *errorMsg) {
+//    [m aliPayFillWithPrivateKey:ShiDianPay_Alipay_PrivateKey partner:ShiDianPay_Alipay_Partner seller:ShiDianPay_Alipay_Seller];
+
+    [ShiDianPay payWithType:ShiDianPayTypeWechat accountModel:m money:@"0.01" orderID:@"alipay_ShiDianPay_044" title:@"新年快乐" desc:@"时点支付：ShiDianPay_FrameWork" completeClosure:^(NSString *errorMsg) {
         
         [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"ShiDianPay"];
 

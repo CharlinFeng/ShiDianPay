@@ -97,9 +97,6 @@ typedef enum{
 /** 微信开发平台：AppID */
 #define ShiDianPay_WeChat_AppID @"wx8f69e8edc2d6cda7"
 
-/** 微信开发平台：AppSecret */
-#define ShiDianPay_WeChat_AppSecret @"d90cfc8d0b9f95427aa1ce50331a435c"
-
 /** 微信支付商号 */
 #define ShiDianPay_WeChat_Mch_id @"1309808001"
 

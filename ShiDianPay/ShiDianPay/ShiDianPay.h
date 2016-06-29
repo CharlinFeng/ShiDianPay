@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "ShiDianPayConst.h"
 #import "ShiDianPaySingleton.h"
-
+#import "ShiDianPayAccountModel.h"
 
 
 @interface ShiDianPay : NSObject
@@ -23,7 +23,7 @@ HMSingletonH(ShiDianPay)
 +(void)handleOpenURL:(NSURL *)url;
 
 
-+(void)payWithType:(ShiDianPayType)type money:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure;
++(void)payWithType:(ShiDianPayType)type accountModel:(ShiDianPayAccountModel *)accountModel money:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure;
 
 
 @end

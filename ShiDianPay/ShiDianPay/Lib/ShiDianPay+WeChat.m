@@ -25,7 +25,27 @@
 
 
 
-+(void)payUseWeChatWithMoney:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure{
++(void)payUseWeChatWithAccountModel:(ShiDianPayAccountModel *)accountModel money:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure{
+    
+    NSString *weChat_AppID = nil;
+    NSString *weChat_Mch_id = nil;
+    NSString *weChat_NotifyURL = nil;
+    NSString *weChat_API_PartnerKey = nil;
+    
+    if (accountModel != nil) {
+    
+        weChat_AppID = accountModel.wechat_AppID;
+        weChat_Mch_id = accountModel.weChat_Mch_id;
+        weChat_NotifyURL = accountModel.notifyURL;
+        weChat_API_PartnerKey = accountModel.weChat_API_PartnerKey;
+        
+    }else {
+        
+        weChat_AppID = ShiDianPay_WeChat_AppID;
+        weChat_Mch_id = ShiDianPay_WeChat_Mch_id;
+        weChat_NotifyURL = ShiDianPay_WeChat_NotifyURL;
+        weChat_API_PartnerKey = ShiDianPay_WeChat_API_PartnerKey;
+    }
 
     ShiDianPay *pay = [ShiDianPay sharedShiDianPay];
     
@@ -33,7 +53,7 @@
     
         pay.isRegisterWeChatPay = YES;
         
-        [WXApi registerApp:ShiDianPay_WeChat_AppID withDescription:@"ShiDianPay_App"];
+        [WXApi registerApp:weChat_AppID withDescription:@"ShiDianPay_App"];
     }
     
     //============================================================
@@ -47,9 +67,9 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     //应用APPID
-    params[@"appid"] = ShiDianPay_WeChat_AppID;
+    params[@"appid"] = weChat_AppID;
     //微信支付商户号
-    params[@"mch_id"] = ShiDianPay_WeChat_Mch_id;
+    params[@"mch_id"] = weChat_Mch_id;
     //产生随机字符串，这里最好使用和安卓端一致的生成逻辑
     NSString *nonce_str = [NSString generateTradeNO];
     params[@"nonce_str"] = nonce_str;
@@ -64,13 +84,13 @@
     NSString *spbill_create_ip = @"8.8.8.8";
     params[@"spbill_create_ip"] = spbill_create_ip;
     //接收微信支付异步通知回调地址，通知url必须为直接可访问的url，不能携带参数。
-    params[@"notify_url"] = ShiDianPay_WeChat_NotifyURL;
+    params[@"notify_url"] = weChat_NotifyURL;
     //交易类型，取值如下：JSAPI，NATIVE，APP
     NSString *trade_type = @"APP";
     params[@"trade_type"] = trade_type;
     
     //获取sign签名
-    DataMD5 *data = [[DataMD5 alloc] initWithAppid:ShiDianPay_WeChat_AppID mch_id:ShiDianPay_WeChat_Mch_id nonce_str:nonce_str partner_id:ShiDianPay_WeChat_API_PartnerKey body:desc out_trade_no:orderID total_fee:total_fee spbill_create_ip:spbill_create_ip notify_url:ShiDianPay_WeChat_NotifyURL trade_type:trade_type];
+    DataMD5 *data = [[DataMD5 alloc] initWithAppid:weChat_AppID mch_id:weChat_Mch_id nonce_str:nonce_str partner_id:weChat_API_PartnerKey body:desc out_trade_no:orderID total_fee:total_fee spbill_create_ip:spbill_create_ip notify_url:weChat_NotifyURL trade_type:trade_type];
     params[@"sign"] = [data getSignForMD5];
     
     // 转换成xml字符串

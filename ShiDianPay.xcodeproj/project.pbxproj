@@ -38,6 +38,7 @@
 		8952235C1C67873000510172 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8952235B1C67873000510172 /* XMLDictionary.m */; };
 		8952235F1C6787EE00510172 /* NSString+ShiDianPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8952235E1C6787EE00510172 /* NSString+ShiDianPay.m */; };
 		895223621C67949600510172 /* ShiDianPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 895223611C67949600510172 /* ShiDianPay.m */; };
+		89799EC31D236CB0007665A5 /* ShiDianPayAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 89799EC21D236CB0007665A5 /* ShiDianPayAccountModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -171,6 +172,8 @@
 		8952235E1C6787EE00510172 /* NSString+ShiDianPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ShiDianPay.m"; sourceTree = "<group>"; };
 		895223601C67949600510172 /* ShiDianPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShiDianPay.h; sourceTree = "<group>"; };
 		895223611C67949600510172 /* ShiDianPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShiDianPay.m; sourceTree = "<group>"; };
+		89799EC11D236CB0007665A5 /* ShiDianPayAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShiDianPayAccountModel.h; sourceTree = "<group>"; };
+		89799EC21D236CB0007665A5 /* ShiDianPayAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShiDianPayAccountModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +247,8 @@
 			children = (
 				895223601C67949600510172 /* ShiDianPay.h */,
 				895223611C67949600510172 /* ShiDianPay.m */,
+				89799EC11D236CB0007665A5 /* ShiDianPayAccountModel.h */,
+				89799EC21D236CB0007665A5 /* ShiDianPayAccountModel.m */,
 				895222CE1C67642500510172 /* Lib */,
 			);
 			path = ShiDianPay;
@@ -482,6 +487,7 @@
 				8952234C1C67642500510172 /* ShiDianPay+Alipay.m in Sources */,
 				895223451C67642500510172 /* DataSigner.m in Sources */,
 				8952234A1C67642500510172 /* RSADataSigner.m in Sources */,
+				89799EC31D236CB0007665A5 /* ShiDianPayAccountModel.m in Sources */,
 				895223491C67642500510172 /* openssl_wrapper.m in Sources */,
 				8952235F1C6787EE00510172 /* NSString+ShiDianPay.m in Sources */,
 				895223431C67642500510172 /* Order.m in Sources */,

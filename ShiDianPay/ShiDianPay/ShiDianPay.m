@@ -22,16 +22,22 @@ HMSingletonM(ShiDianPay)
 
 
 
-+(void)payWithType:(ShiDianPayType)type money:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure{
++(void)payWithType:(ShiDianPayType)type accountModel:(ShiDianPayAccountModel *)accountModel money:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure{
 
     if(type == ShiDianPayTypeAliPay){
     
-        [self payUseAlipayWithMoney:money orderID:orderID title:title desc:desc completeClosure:completeClosure];
+        if(accountModel != nil){[accountModel aliPayCheck];}
+        
+        [self payUseAlipayWithAccountModel:accountModel money:money orderID:orderID title:title desc:desc completeClosure:completeClosure];
         
     }else{
         
-        [self payUseWeChatWithMoney:money orderID:orderID title:title desc:desc completeClosure:completeClosure];
+        if(accountModel != nil){[accountModel wechatCheck];}
+        
+        [self payUseWeChatWithAccountModel:accountModel money:money orderID:orderID title:title desc:desc completeClosure:completeClosure];
+        
     }
+    
 }
 
 @end

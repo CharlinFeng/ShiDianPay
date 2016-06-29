@@ -37,7 +37,7 @@
 
 
 
-+(void)payUseAlipayWithMoney:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure{
++(void)payUseAlipayWithAccountModel:(ShiDianPayAccountModel *)accountModel money:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure{
     
     ShiDianPay *pay = [ShiDianPay sharedShiDianPay];
     pay.CompleteBlock = completeClosure;
@@ -50,12 +50,32 @@
     /*============================================================================*/
     /*=======================需要填写商户app申请的===================================*/
     /*============================================================================*/
-    NSString *partner = ShiDianPay_Alipay_Partner;
-    NSString *seller = ShiDianPay_Alipay_Seller;
-    NSString *privateKey = ShiDianPay_Alipay_PrivateKey;
+    NSString *partner = nil;
+    NSString *seller = nil;
+    NSString *privateKey = nil;
     /*============================================================================*/
     /*============================================================================*/
     /*============================================================================*/
+    
+    NSString *notifyURL = nil;
+    
+    if (accountModel != nil){
+        
+        partner = accountModel.aliPay_partner;
+        seller = accountModel.aliPay_seller;
+        privateKey = accountModel.privateKey;
+        notifyURL = accountModel.notifyURL;
+        
+    }else {
+        
+        partner = ShiDianPay_Alipay_Partner;
+        seller = ShiDianPay_Alipay_Seller;
+        privateKey = ShiDianPay_Alipay_PrivateKey;
+        notifyURL = ShiDianPay_Alipay_NotifyURL;
+    }
+    
+    
+    
     
     //partner和seller获取失败,提示
     if ([partner length] == 0 ||
@@ -78,7 +98,7 @@
     order.productName = title; //商品标题
     order.productDescription = desc; //商品描述
     order.amount = money; //商品价格
-    order.notifyURL = ShiDianPay_Alipay_NotifyURL; //回调URL
+    order.notifyURL = notifyURL; //回调URL
 
     order.service = @"mobile.securitypay.pay";
     order.paymentType = @"1";
