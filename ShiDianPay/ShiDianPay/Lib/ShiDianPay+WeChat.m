@@ -27,6 +27,17 @@
 
 +(void)payUseWeChatWithAccountModel:(ShiDianPayAccountModel *)accountModel money:(NSString *)money orderID:(NSString *)orderID title:(NSString *)title desc:(NSString *)desc completeClosure:(void(^)(NSString *errorMsg))completeClosure{
     
+    NSURL *url = [NSURL URLWithString:@"weixin://"];
+    
+    BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:url];
+    
+    if (!canOpenURL) {
+        
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"支付失败" message:@"请先安装微信客户端" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
+        
+        [av show];
+    }
+    
     NSString *weChat_AppID = nil;
     NSString *weChat_Mch_id = nil;
     NSString *weChat_NotifyURL = nil;
